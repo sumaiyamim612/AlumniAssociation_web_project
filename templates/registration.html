@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Alumni Association</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="{% url 'home' %}" class="brand-logo">Alumni Association</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'login' %}">LogIn</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="{% url 'login' %}">LogIn</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+    <div class="container ">
+      <div class="row">
+	    {% for message in messages %} 
+   toastr.{{ message.tags }}("{{ message }}");
+ {% endfor %} 
+        <div class="card center-align rounded credentialCard">
+          <div id="register" class="col s12">
+		<form action='registration' method="post">
+		{% csrf_token %}
+			<div class="form-container">
+				<h3 class="teal-text">Welcome,Register Your Self</h3>
+				<div class="row">
+				<div class="input-field col s12">
+				 <input id="username" type="text" name="username" class="validate">
+				 <label for="username">User Name</label>
+				</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="first_name" type="text" name="first_name" class="validate">
+						<label for="first_name">First Name</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="last_name" type="text" name="last_name" class="validate">
+						<label for="last_name">Last Name</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="email" type="email" name="email" class="validate">
+						<label for="email">Email</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="password" type="password" name="password" class="validate">
+						<label for="password">Password</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="password-confirm" type="password" name="password_confirm" class="validate">
+						<label for="password-confirm">Password Confirmation</label>
+					</div>
+				</div>
+				<center>
+					<button class="btn waves-effect waves-light teal" type="submit" name="action">Submit</button>
+				</center>
+			</div>
+		</form>
+	</div>
+    </div>
+    </div>
+    </div>
+	<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="assets/js/materialize.js"></script>
+  <script src="assets/js/init.js"></script>
+    </body>

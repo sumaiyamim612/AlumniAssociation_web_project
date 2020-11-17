@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Alumni Association</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Alumni Assiosion</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'home' %}">Log out</a></li>
+        <li><a href="#"> Post Job</a></li>
+        <li><a href="#"> Post Event</a></li>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="login.html">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+      <div class="container">
+        <div class="row topMargin">
+          <div class="col s12">
+
+
+          <div id="update_profile" class="col s12">
+        <div class="row">
+          <div class="center-align">
+            <h3 class="title"> Profile</h3>
+          </div>
+          <div class="right-align">
+            <a href="update_profile.html" class="waves-effect waves-light btn-flat right profileDlt"
+              ><i class="material-icons right">edit</i>Edit
+              Profile</a
+            >
+          </div>
+        </div>
+        <div class="card rounded">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12 l6 m6">
+                <img
+                          src="assets/images/try.jpg"
+                          alt="registerimg"
+                          class="responsive-img"
+                        />
+              </div>
+            <div class="col s12 l6 m6">
+            <div class="row">
+              <form action="profile" method="post">
+                <div class="row">
+                  <div class="col s12 l6 m6">
+                   <h6>Name : Sumaiya islam mim </h6>
+                  </div>
+                  <div class="col s12 l6 m6">
+                   <h6>Address :Matuail</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s12 l6 m6">
+                   <h6>Batch :25</h6>
+                  </div>
+                  <div class="col s12 l6 m6">
+                   <h6>Passing Year :2022 </h6>
+                  </div>
+                </div> 
+                <div class="row">
+                  <div class="col s12 l6 m6">
+                   <h6>Job :Software Tester</h6>
+                  </div>
+                  <div class="col s12 l6 m6">
+                   <h6>Company:Google </h6>
+                  </div>
+                </div>                
+              </form>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <!-- CHANGE PASSWORD -->
+        <div class="center-align">
+          <a
+            href="Update_profile.html"
+            class="waves-effect btn blue darken-3 btnRounded"
+          >
+            Update
+          </a>
+      </div>
+
+    <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="assets/js/materialize.js"></script>
+  <script src="assets/js/init.js"></script>
+  </body>
+</html>
