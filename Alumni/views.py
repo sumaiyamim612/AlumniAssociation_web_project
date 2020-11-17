@@ -36,3 +36,6 @@ def registration(request):
         return render(request,'registration.html')
 def profile (request):
     return render(request,'profile.html')
+
+def job_view (request):
+    return render(request,'job_view.html')    
