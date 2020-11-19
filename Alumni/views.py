@@ -34,8 +34,25 @@ def registration(request):
             return redirect('registration')
     else:        
         return render(request,'registration.html')
-def profile (request):
-    return render(request,'profile.html')
+def profile(request):
+    return render(request, 'profile.html')
 
-def job_view (request):
-    return render(request,'job_view.html')    
+
+def edit_profile(request):
+    return render(request, 'edit_profile.html')
+
+
+def job_post(request):
+    return render(request, 'job_post.html')
+
+
+def event_post(request):
+    return render(request, 'event_post.html')
+
+
+def job_view(request):
+    return render(request, 'job_view.html')
+
+
+def event_view(request):
+    return render(request, 'event_view.html') 

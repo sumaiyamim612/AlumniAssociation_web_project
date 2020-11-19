@@ -16,7 +16,7 @@
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Alumni Assiosion</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{% url 'home' %}">Log out</a></li>
-        <li><a href="{% url 'job_post' %}"> Post Job</a></li>
+        <li><a href="{% url 'profile' %}"> Profile</a></li>
         <li><a href="{% url 'event_post' %}"> Post Event</a></li>
 
       <ul id="nav-mobile" class="sidenav">
@@ -26,48 +26,60 @@
     </div>
   </nav>
   <div class="container">
-        <div class="right-align">
-             <a href="{% url 'profile' %}" class="waves-effect waves-light btn-flat right profileDlt">
-               <i class="material-icons right  ">account_circle</i>
-              Profile</a>
+        <div class="center">
+        <h3> Post Job here </h3>
         </div>
-    <h3> Update your profile </h3>
   <div class="row">
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
           <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Name</label>
+          <label for="icon_prefix">Job Title</label>
         </div>
         <div class="input-field col s6">
-          <i class="material-icons prefix">home</i>
           <input id="icon_telephone" type="text" class="validate">
-          <label for="icon_telephone">Address</label>
+          <label for="icon_telephone">Company Link</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <i class="material-icons prefix">class</i>
-          <input id="batch" type="text" class="validate">
-          <label for="batch">Batch</label>
+          <input id="Job_Position" type="text" class="validate">
+          <label for="Job_Position">Job Position</label>
         </div>
         <div class="input-field col s6">
-          <i class="material-icons prefix">event</i>
-          <input id="passing_year" type="text" class="validate">
-          <label for="passing_year">Passing Year</label>
+          <input id="Job_Nature" type="text" class="validate">
+          <label for="Job_Nature"> Job Nature</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">business_center</i>
-          <input id="job" type="text" class="validate">
-          <label for="job">Job</label>
+            <div class="input-field col s6">
+            <input id="experience" type="text" class="validate">
+            <label for="experience">Experience</label>
+            </div>
+            <div class="input-field col s6">
+            <input id="workplace" type="text" class="validate">
+            <label for="workplace">Workplace</label>
+            </div>
         </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">business</i>
-          <input id="companyd" type="text" class="validate">
-          <label for="company">Company</label>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="Educational_Requirement" type="text" class="validate">
+                <label for="Educational_Requirement">Educational Requirement</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="Required_Skill" type="text" class="validate">
+                <label for="Required_Skill">Must Required Skill</label>
+            </div>
+        </div>    
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email </label>
+            </div>
+            <div class="input-field col s6">
+                <input id="dedline" type="text" class="validate">
+                <label for="dedline">Dedline </label>
+            </div>
         </div>
         <div id="div" class="row center">
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit

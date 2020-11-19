@@ -16,8 +16,8 @@
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Alumni Assiosion</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{% url 'home' %}">Log out</a></li>
-        <li><a href="#"> Post Job</a></li>
-        <li><a href="#"> Post Event</a></li>
+        <li><a href="{% url 'job_post' %}"> Post Job</a></li>
+        <li><a href="{% url 'event_post' %}"> Post Event</a></li>
 
       <ul id="nav-mobile" class="sidenav">
         <li><a href="login.html">Navbar Link</a></li>
@@ -36,7 +36,7 @@
             <h3 class="title"> Profile</h3>
           </div>
           <div class="right-align">
-            <a href="update_profile.html" class="waves-effect waves-light btn-flat right profileDlt"
+            <a href="{% url 'edit_profile' %}" class="waves-effect waves-light btn-flat right profileDlt"
               ><i class="material-icons right">edit</i>Edit
               Profile</a
             >
@@ -85,15 +85,6 @@
             </div>
           </div>
         </div>
-        <!-- CHANGE PASSWORD -->
-        <div class="center-align">
-          <a
-            href="Update_profile.html"
-            class="waves-effect btn blue darken-3 btnRounded"
-          >
-            Update
-          </a>
-      </div>
 
     <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
