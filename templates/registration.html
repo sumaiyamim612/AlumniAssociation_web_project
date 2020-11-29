@@ -26,20 +26,27 @@
   </nav>
     <div class="container ">
       <div class="row">
-	    {% for message in messages %} 
-   toastr.{{ message.tags }}("{{ message }}");
- {% endfor %} 
-        <div class="card center-align rounded credentialCard">
-          <div id="register" class="col s12">
-		<form action='registration' method="post">
-		{% csrf_token %}
+	{% block messages %}
+      {% if messages %}
+          {% for message in messages %}
+              <div class="alert alert-{{ message.tags }} text-center"> 
+                  <a class="close" data-dismiss="alert">×</a>
+                  {{ message|safe }}
+              </div>
+          {% endfor %}
+      {% endif %}
+    {% endblock %}
+      <div class="card center-align rounded credentialCard">
+        <div id="register" class="col s12">
+		 <form action='registration' method="post">
+		 {% csrf_token %}
 			<div class="form-container">
 				<h3 class="teal-text">Welcome,Register Your Self</h3>
 				<div class="row">
-				<div class="input-field col s12">
-				 <input id="username" type="text" name="username" class="validate">
-				 <label for="username">User Name</label>
-				</div>
+					<div class="input-field col s12">
+						<input id="username" type="text" name="username" class="validate">
+						<label for="username">User Name</label>
+					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
@@ -68,14 +75,21 @@
 				<center>
 					<button class="btn waves-effect waves-light teal" type="submit" name="action">Submit</button>
 				</center>
-			</div>
-		</form>
-	</div>
-    </div>
-    </div>
+			 </div>
+		  </form>
+	     </div>
+        </div>
+	  </div>
     </div>
 	<!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="assets/js/materialize.js"></script>
   <script src="assets/js/init.js"></script>
-    </body>
+</body>
+    {% comment %} <footer class="page-footer cyan">
+          <div class="footer-copyright">
+            <div class="container">
+            ©  Copyright Sumaiya Islam
+            </div>
+          </div>
+    </footer> {% endcomment %}

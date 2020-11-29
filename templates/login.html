@@ -26,20 +26,32 @@
   </nav>
     <div class="container ">
       <div class="row">
+	{% block messages %}
+      {% if messages %}
+          {% for message in messages %}
+              <div class="alert alert-{{ message.tags }} text-center"> 
+                  <a class="close" data-dismiss="alert">×</a>
+                  {{ message|safe }}
+              </div>
+          {% endfor %}
+      {% endif %}
+    {% endblock %}
         <div class="card center-align rounded credentialCard">
          <div id="login" class="col s12">
+		  <form action='login' method="post">
+		  {% csrf_token %}
 		   <form class="col s12">
 			<div class="form-container">
 				<h3 class="teal-text">LogIn</h3>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="email" type="email" class="validate">
-						<label for="email">Email</label>
+						<input id="username" type="text" class="validate" name="username">
+						<label for="username">Username</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="password" type="password" class="validate">
+						<input id="password" type="password" class="validate" name="password">
 						<label for="password">Password</label>
 					</div>
 				</div>
@@ -48,14 +60,13 @@
 					<button class="btn waves-effect waves-light teal" type="submit" name="action">Login</button>
 					<br>
 					<br>
-					<a href="{% url 'profile' %}">Forgotten password?</a>
+					<a href="#">Forgotten password?</a>
 				</center>
 			</div>
 		</form>
 		</div>
 		</div>
 	 </div>
- </div>
 
    <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

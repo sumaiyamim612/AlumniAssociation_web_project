@@ -1,39 +1,60 @@
-from django.shortcuts import render ,redirect
-from django.contrib.auth.models import User,auth
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User, auth
+from django.contrib import messages
 
 # Create your views here.
-def home (request):
-    return render(request,'index.html')
+
+
+def home(request):
+    return render(request, 'index.html')
+
 
 def login(request):
-    return render(request,'login.html')
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        if username and password:
+            user = auth.authenticate(username=username, password=password)
+            if user is not None:
+                auth.login(request, user)
+                messages.success(request, 'you are login')
+                return redirect('profile')
+            else:
+                messages.error(request, ' incorret Username Password!')
+                return redirect('login')
+
+        else:
+            messages.error(request, '  Username & Password are invalid!')
+    return render(request, 'login.html')
+
 
 def registration(request):
-    if request.method=='POST':
-        username=request.POST["username"]
-        first_name=request.POST["first_name"]
-        last_name=request.POST["last_name"]
-        email=request.POST["email"]
-        password=request.POST["password"]
-        confirm_password=request.POST["password_confirm"]
+    if request.method == 'POST':
+        username = request.POST["username"]
+        first_name = request.POST["first_name"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        confirm_password = request.POST["password_confirm"]
         if password == confirm_password:
-            user_Create=User.objects.create_user(
+            user_Create = User.objects.create_user(
                 username=username,
                 first_name=first_name,
-                last_name=last_name,
                 email=email,
                 password=password
             )
             user_Create.save()
             print("account create")
-            messages.success(request, "The Account has been successfully added")
+            messages.success(
+                request, "The Account has been successfully added")
             return redirect('registration')
         else:
             messages.error(request, "password not same")
             print("password not same")
             return redirect('registration')
-    else:        
-        return render(request,'registration.html')
+    else:
+        return render(request, 'registration.html')
+
+
 def profile(request):
     return render(request, 'profile.html')
 
@@ -55,4 +76,4 @@ def job_view(request):
 
 
 def event_view(request):
-    return render(request, 'event_view.html') 
+    return render(request, 'event_view.html')
