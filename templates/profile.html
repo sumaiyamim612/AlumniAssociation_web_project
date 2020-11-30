@@ -47,7 +47,7 @@
             <div class="row">
               <div class="col s12 l6 m6">
                 <img
-                          src="assets/images/try.jpg"
+                          src={{user.profile.profileImage.url}}
                           alt="registerimg"
                           class="responsive-img"
                         />
@@ -57,26 +57,26 @@
               <form action="profile" method="post">
                 <div class="row">
                   <div class="col s12 l6 m6">
-                   <h6>Name : Sumaiya islam mim </h6>
+                   <h6>Name : {{user.profile.name}}</h6>
                   </div>
                   <div class="col s12 l6 m6">
-                   <h6>Address :Matuail</h6>
+                   <h6>Address :{{user.profile.address}}</h6>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col s12 l6 m6">
-                   <h6>Batch :25</h6>
+                   <h6>Batch :{{user.profile.batch}}</h6>
                   </div>
                   <div class="col s12 l6 m6">
-                   <h6>Passing Year :2022 </h6>
+                   <h6>Passing Year :{{user.profile.passingYear}} </h6>
                   </div>
                 </div> 
                 <div class="row">
                   <div class="col s12 l6 m6">
-                   <h6>Job :Software Tester</h6>
+                   <h6>Job :{{user.profile.job}}</h6>
                   </div>
                   <div class="col s12 l6 m6">
-                   <h6>Company:Google </h6>
+                   <h6>Company:{{user.profile.company}} </h6>
                   </div>
                 </div>                
               </form>

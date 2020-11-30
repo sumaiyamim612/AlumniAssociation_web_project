@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Alumni import views
+from django.conf.urls.static import static
+from django.conf import settings
 urlpatterns = [
  path('admin/', admin.site.urls),
     path('', views.home, name="home"),
@@ -27,4 +29,4 @@ urlpatterns = [
     path('event_post', views.event_post, name="event_post"),
     path('event_view', views.event_view, name="event_view"),
     path('job_view', views.job_view, name="job_view"),
-    ]
+    ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
