@@ -13,7 +13,7 @@ def home(request):
         'AllJobPostView':AllJobPostView, 
         'AllEventView':AllEventView, 
     }
-    return render(request, 'index.html')
+    return render(request, 'index.html',context)
 
 
 def login(request):
