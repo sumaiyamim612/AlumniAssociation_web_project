@@ -14,13 +14,15 @@ class JobCircular (models.Model):
     educationalRequierments = models.CharField(max_length=150)
     mustRequierdSkills = models.CharField(max_length=255)
     email = models.CharField(max_length=100)
-    jobImageBanner = models.ImageField()
+    jobImageBanner = models.ImageField(upload_to='media/')
     deadline = models.CharField(max_length=30)
 
 
 class EventPost(models.Model):
     eventTitle = models.CharField(max_length=100)
-    eventImage = models.ImageField()
+    eventLink=models.CharField(max_length=60,blank=True,null=True)
+    eventKeyNote=models.CharField(max_length=255,blank=True,null=True)
+    eventImage = models.ImageField(upload_to='media/')
     eventDescription = models.CharField(max_length=255)
     eventChifeGuest = models.CharField(max_length=120)
     eventlocation = models.CharField(max_length=150)
@@ -35,4 +37,4 @@ class Profile(models.Model):
     passingYear = models.CharField(max_length=10)
     job = models.CharField(max_length=100)
     company = models.CharField(max_length=100) 
-    profileImage = models.ImageField(blank=True, null=True)
+    profileImage = models.ImageField(upload_to='media/')

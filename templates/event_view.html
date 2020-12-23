@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Alumni Association</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="{% url 'home' %}" class="brand-logo">Alumni Assiosion</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'login' %}">Post Event</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="login.html">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="divider">
+    </div>
+    <h3>Events</h3>
+    <div class="divider">
+    </div>
+    <div class="section">
+      {% for event in AllEventView %}
+           <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="{{event.eventImage.url}}">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">{{event.eventTitle}}<i class="material-icons right">more_vert</i></span>
+            <p><a href="{{event.eventLink}}">Visit Event </a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{event.eventTitle}}<i class="material-icons right">close</i></span>
+             <div class="row ">
+                  <div class="col s12">
+                   <h6>Description:{{event.eventDescription}} </h6>
+                  </div>
+                </div>
+                <div class="row ">
+                  <div class="col s12">
+                   <h6>
+                   Event Chife Guest:{{event.eventChifeGuest}}
+                   </h6>
+                  </div>
+                </div>
+                <div class="row ">
+                  <div class="col s12">
+                   <h6>
+                  Event location:{{event.eventlocation}}
+                   </h6>
+                  </div>
+                </div>
+                <div class="row ">
+                  <div class="col s12">
+                   <h6>
+                   Event Start Time:{{event.eventStartTime}}
+                   </h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s12 l6 m6">
+                   <h6>Date: {{event.eventDate}}</h6>
+                  </div>
+                </div> 
+                <div class="row">
+                  <div class="col s12 l6 m6">
+                   <h6>Event Keynote: {{event.eventKeyNote}}</h6>
+                  </div>
+                </div> 
+          </div>
+      {%endfor%}
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+      <p>@Sumaiya islam Mim</p>
+    </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="assets/js/materialize.js"></script>
+  <script src="assets/js/init.js"></script>
+
+  </body>
+</html>

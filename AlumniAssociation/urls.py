@@ -19,14 +19,14 @@ from Alumni import views
 from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
- path('admin/', admin.site.urls),
-    path('', views.home, name="home"),
-    path('login', views.login, name="login"),
-    path('registration', views.registration, name="registration"),
-    path('profile', views.profile, name="profile"),
-    path('edit_profile', views.edit_profile, name="edit_profile"),
-    path('job_post', views.job_post, name="job_post"),
-    path('event_post', views.event_post, name="event_post"),
-    path('event_view', views.event_view, name="event_view"),
-    path('job_view', views.job_view, name="job_view"),
-    ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+path('admin/', admin.site.urls),
+path('', views.home, name="home"),
+path('login', views.login, name="login"),
+path('registration', views.registration, name="registration"),
+path('profile', views.profile, name="profile"),
+path('edit_profile', views.edit_profile, name="edit_profile"),
+path('job_post', views.job_post, name="job_post"),
+path('event_post', views.event_post, name="event_post"),
+path('event_view', views.event_view, name="event_view"),
+path('job_view', views.job_view, name="job_view"),
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -29,48 +29,64 @@
         <div class="center">
         <h3> Post Event here </h3>
         </div>
+    {% block messages %}
+      {% if messages %}
+          {% for message in messages %}
+              <div class="alert alert-{{ message.tags }} text-center"> 
+                  <a class="close" data-dismiss="alert">×</a>
+                  {{ message|safe }}
+              </div>
+          {% endfor %}
+      {% endif %}
+    {% endblock %}
   <div class="row">
-    <form class="col s12">
+    <form action="event_post" method="post" enctype='multipart/form-data'>
+    {% csrf_token %}
       <div class="row">
         <div class="input-field col s6">
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Event Title</label>
+          <input id="event_title" type="text" class="validate" name="event_title">
+          <label for="evenet_title">Event Title</label>
         </div>
         <div class="input-field col s6">
-          <input id="icon_telephone" type="text" class="validate">
-          <label for="icon_telephone">Event Link</label>
+          <input id="event_link" type="text" class="validate" name="event_link">
+          <label for="event_link">Event Link</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="Job_Position" type="text" class="validate">
-          <label for="Job_Position">Event Description</label>
+          <input id="event_discription" type="text" class="validate" name="event_discription">
+          <label for="event_discription">Event Description</label>
         </div>
         <div class="input-field col s6">
-          <input id="Job_Nature" type="text" class="validate">
-          <label for="Job_Nature"> Event Place</label>
+          <input id="event_place" type="text" class="validate"name="event_place">
+          <label for="event_place"> Event Place</label>
         </div>
       </div>
       <div class="row">
             <div class="input-field col s6">
-            <input id="experience" type="text" class="validate">
-            <label for="experience">Event Date</label>
+            <input id="event_date" type="date" class="validate" name="event_date">
+            <label for="event_date">Event Date</label>
             </div>
             <div class="input-field col s6">
-            <input id="workplace" type="text" class="validate">
-            <label for="workplace">Event Chife Guest</label>
+            <input id="event_guest" type="text" class="validate" name="event_guest">
+            <label for="event_guest">Event Chife Guest</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="Educational_Requirement" type="text" class="validate">
-                <label for="Educational_Requirement">Event Key Note</label>
+                <input id="event_keynote" type="text" class="validate" name="event_keynote">
+                <label for="event_keynote">Event Key Note</label>
             </div>
             <div class="input-field col s6">
-                <input id="Required_Skill" type="text" class="validate">
-                <label for="Required_Skill">Event Time</label>
+                <input id="event_time" type="text" class="validate" name="event_time">
+                <label for="event_time">Event Time</label>
             </div>
         </div>    
+        <div class "row">
+          <div class="input-field col s12">
+              <input type="file" id="image" name="image">
+          </div>
+        </div>
         <div id="div" class="row center">
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
               <i class="material-icons right">send</i>

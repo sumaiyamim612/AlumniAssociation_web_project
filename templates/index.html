@@ -33,191 +33,144 @@
     <div class="divider">
     </div>
     <div class="section">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="assets/images/postgif.gif">
+      {% for post in AllJobPostView %}
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="{{post.jobImageBanner.url}}">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">{{post.jobTitle}}<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">Visit Company Profile</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{post.jobTitle}}<i class="material-icons right">close</i></span>
+                  <div class="row ">
+                    <div class="col s12 l6 m6">
+                    <h4>Description </h4>
+                    </div>
+                  </div>
+                  <div class="row ">
+                    <div class="col s12">
+                    <h6>
+                    Job Position:{{post.jobPostion}}
+                    </h6>
+                    </div>
+                  </div>
+                  <div class="row ">
+                    <div class="col s12">
+                    <h6>
+                    We need a Mobile Applications Developer who will be responsible for the development, implementation, analysis, testing and maintenance of Mobile Apps (iOS & Android) and integration with Back-End API etc. Need to know the entire application lifecycle (concept, design, test, implementation and support) and produce fully functional mobile applications writing clean code following standard coding practices. The responsibility also includes collect requirements, analysis, develop solutions and, Implement, Troubleshoot and debug to optimize performance, Design interfaces to improve user experience etc.
+                    </h6>
+                    </div>
+                  </div>
+                  <div class="row ">
+                    <div class="col s12">
+                    <h6>
+                    Job Nature:{{post.jobNuture}}
+                    </h6>
+                    </div>
+                  </div>
+                  <div class="row ">
+                    <div class="col s12">
+                    <h6>
+                    Experience: {{post.jobExperiance}}
+                    </h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 l6 m6">
+                    <h6>Workplace:{{post.workPlace}}</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 l6 m6">
+                    <h6>Educational Requirement: {{post.educationalRequierments}} </h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 l6 m6">
+                    <h6>Must Required Skill:{{post.mustRequierdSkills}}
+                    </h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 l6 m6">
+                    <h6>Email : {{post.email}} </h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12 l6 m6">
+                    <h6>Dedline :{{post.deadline}} </h6>
+                    </div>
+                  </div>
+          </div>
         </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Sr.Software Developer<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">Visit Company Profile</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Sr.Software Developer<i class="material-icons right">close</i></span>
-                <div class="row ">
-                  <div class="col s12 l6 m6">
-                   <h4>Description </h4>
-                  </div>
-                </div>
-                <div class="row ">
-                  <div class="col s12">
-                   <h6>
-                   Job Position: Mobile Application Developer
-                   </h6>
-                  </div>
-                </div>
-                <div class="row ">
-                  <div class="col s12">
-                   <h6>
-                   We need a Mobile Applications Developer who will be responsible for the development, implementation, analysis, testing and maintenance of Mobile Apps (iOS & Android) and integration with Back-End API etc. Need to know the entire application lifecycle (concept, design, test, implementation and support) and produce fully functional mobile applications writing clean code following standard coding practices. The responsibility also includes collect requirements, analysis, develop solutions and, Implement, Troubleshoot and debug to optimize performance, Design interfaces to improve user experience etc.
-                   </h6>
-                  </div>
-                </div>
-                <div class="row ">
-                  <div class="col s12">
-                   <h6>
-                   Job Nature: Project Basis.
-                   </h6>
-                  </div>
-                </div>
-                <div class="row ">
-                  <div class="col s12">
-                   <h6>
-                   Experience: at least 2 years.
-                   </h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 l6 m6">
-                   <h6>Workplace: Office and Home.</h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 l6 m6">
-                   <h6>Educational Requirement: Bachelor degree in any discipline (We don't care about your education if you have experience). </h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 l6 m6">
-                  <h6>Must Required Skill:
-                  1. Back-end development experience on Laravel is desired.
-                  2. Flutter/React Native.
-                  3. Database programming (MySQL, MySQLite, SQLite, MongoDB).
-                  4. Strong knowledge in RESTful web services.
-                  5. Locations and Map API's.
-                  6. A portfolio of iOS/Android apps in the Play Store/app store is a plus.
-                  7. Experience in Payment gateway integration in mobile apps is a big plus.
-                  </h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 l6 m6">
-                   <h6>Email :  hr.favicon@gmail.com </h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 l6 m6">
-                   <h6>Dedline : 22/11/2020 </h6>
-                  </div>
-                </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="assets/images/MobileApp.png">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Mobile App Developer<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">Visit Company Profile</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Mobile App Developer<i class="material-icons right">close</i></span>
-                <div class="row ">
-                  <div class="col s12 l6 m6">
-                   <h4>Description </h4>
-                  </div>
-                </div>
-                <div class="row ">
-                  <div class="col s12">
-                   <h6>
-                   Job Position: Mobile Application Developer
-                   </h6>
-                  </div>
-                </div>
-                <div class="row ">
-                  <div class="col s12">
-                   <h6>
-                   We need a Mobile Applications Developer who will be responsible for the development, implementation, analysis, testing and maintenance of Mobile Apps (iOS & Android) and integration with Back-End API etc. Need to know the entire application lifecycle (concept, design, test, implementation and support) and produce fully functional mobile applications writing clean code following standard coding practices. The responsibility also includes collect requirements, analysis, develop solutions and, Implement, Troubleshoot and debug to optimize performance, Design interfaces to improve user experience etc.
-                   </h6>
-                  </div>
-                </div>
-                <div class="row ">
-                  <div class="col s12">
-                   <h6>
-                   Job Nature: Project Basis.
-                   </h6>
-                  </div>
-                </div>
-                <div class="row ">
-                  <div class="col s12">
-                   <h6>
-                   Experience: at least 2 years.
-                   </h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 l6 m6">
-                   <h6>Workplace: Office and Home.</h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 l6 m6">
-                   <h6>Educational Requirement: Bachelor degree in any discipline (We don't care about your education if you have experience). </h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 l6 m6">
-                  <h6>Must Required Skill:
-                  1. Back-end development experience on Laravel is desired.
-                  2. Flutter/React Native.
-                  3. Database programming (MySQL, MySQLite, SQLite, MongoDB).
-                  4. Strong knowledge in RESTful web services.
-                  5. Locations and Map API's.
-                  6. A portfolio of iOS/Android apps in the Play Store/app store is a plus.
-                  7. Experience in Payment gateway integration in mobile apps is a big plus.
-                  </h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 l6 m6">
-                   <h6>Email :  hr.favicon@gmail.com </h6>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 l6 m6">
-                   <h6>Dedline : 22/11/2020 </h6>
-                  </div>
-                </div>
-        </div>
-      </div>
-        <div id="div" class="row center">
+      {%endfor%}
+      <div id="div" class="row center">
             <a class="waves-effect waves-light btn-large blue" href="{% url 'job_view' %}">Load More</a>
-         </div>
-        
+      </div>
     </div>
     <div class="divider"></div>
     <h3>Events</h3>
     <div class="divider"></div>
     <div class="section">
-       <div class="card">
+      {% for event in AllEventView %}
+           <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="assets/images/event1.gif">
+            <img class="activator" src="{{event.eventImage.url}}">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Seminar on E Commerce Business Policy<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">Visit Event </a></p>
+            <span class="card-title activator grey-text text-darken-4">{{event.eventTitle}}<i class="material-icons right">more_vert</i></span>
+            <p><a href="{{event.eventLink}}">Visit Event </a></p>
           </div>
           <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Seminar on E Commerce Business Policy<i class="material-icons right">close</i></span>
-              
+            <span class="card-title grey-text text-darken-4">{{event.eventTitle}}<i class="material-icons right">close</i></span>
+             <div class="row ">
+                  <div class="col s12">
+                   <h6>Description:{{event.eventDescription}} </h6>
+                  </div>
+                </div>
+                <div class="row ">
+                  <div class="col s12">
+                   <h6>
+                   Event Chife Guest:{{event.eventChifeGuest}}
+                   </h6>
+                  </div>
+                </div>
+                <div class="row ">
+                  <div class="col s12">
+                   <h6>
+                  Event location:{{event.eventlocation}}
+                   </h6>
+                  </div>
+                </div>
+                <div class="row ">
+                  <div class="col s12">
+                   <h6>
+                   Event Start Time:{{event.eventStartTime}}
+                   </h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s12 l6 m6">
+                   <h6>Date: {{event.eventDate}}</h6>
+                  </div>
+                </div> 
+                <div class="row">
+                  <div class="col s12 l6 m6">
+                   <h6>Event Keynote: {{event.eventKeyNote}}</h6>
+                  </div>
+                </div> 
           </div>
-       </div>
-       <div id="div" class="row center">
-            <a class="waves-effect waves-light btn-large blue">Load More</a>
+      {%endfor%}
+             <div id="div" class="row center">
+            <a class="waves-effect waves-light btn-large blue" href="{% url 'event_view' %}">Load More</a>
          </div>
-     </div>
+    </div>
     <div class="divider"></div>
-    <div class="section">
-    <p>fotter</p>
+        <div class="section">
+      <p>@Sumaiya islam Mim</p>
+    </div>
     </div>
   </div>
 

@@ -29,58 +29,74 @@
         <div class="center">
         <h3> Post Job here </h3>
         </div>
+            {% block messages %}
+    {% if messages %}
+          {% for message in messages %}
+              <div class="alert alert-{{ message.tags }} text-center"> 
+                  <a class="close" data-dismiss="alert">×</a>
+                  {{ message|safe }}
+              </div>
+          {% endfor %}
+      {% endif %}
+    {% endblock %}
   <div class="row">
-    <form class="col s12">
+    <form  action='job_post' method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
       <div class="row">
         <div class="input-field col s6">
-          <input id="icon_prefix" type="text" class="validate">
+          <input id="icon_prefix" type="text" class="validate" name='job_title'>
           <label for="icon_prefix">Job Title</label>
         </div>
         <div class="input-field col s6">
-          <input id="icon_telephone" type="text" class="validate">
+          <input id="icon_telephone" type="text" class="validate" name='company_url'>
           <label for="icon_telephone">Company Link</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="Job_Position" type="text" class="validate">
+          <input id="Job_Position" type="text" class="validate" name='job_position'>
           <label for="Job_Position">Job Position</label>
         </div>
         <div class="input-field col s6">
-          <input id="Job_Nature" type="text" class="validate">
+          <input id="Job_Nature" type="text" class="validate" name='job_nature'>
           <label for="Job_Nature"> Job Nature</label>
         </div>
       </div>
       <div class="row">
             <div class="input-field col s6">
-            <input id="experience" type="text" class="validate">
+            <input id="experience" type="text" class="validate" name='experience'>
             <label for="experience">Experience</label>
             </div>
             <div class="input-field col s6">
-            <input id="workplace" type="text" class="validate">
+            <input id="workplace" type="text" class="validate" name='workplace'>
             <label for="workplace">Workplace</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="Educational_Requirement" type="text" class="validate">
+                <input id="Educational_Requirement" type="text" class="validate" name='Educational_Requirement'>
                 <label for="Educational_Requirement">Educational Requirement</label>
             </div>
             <div class="input-field col s6">
-                <input id="Required_Skill" type="text" class="validate">
+                <input id="Required_Skill" type="text" class="validate" name='Required_Skill'>
                 <label for="Required_Skill">Must Required Skill</label>
             </div>
         </div>    
         <div class="row">
             <div class="input-field col s6">
-                <input id="email" type="email" class="validate">
+                <input id="email" type="email" class="validate" name='email'>
                 <label for="email">Email </label>
             </div>
             <div class="input-field col s6">
-                <input id="dedline" type="text" class="validate">
+                <input id="dedline" type="date" class="validate" name='dedline'>
                 <label for="dedline">Dedline </label>
             </div>
         </div>
+              <div class "row">
+        <div class="input-field col s12">
+            <input type="file" id="image" name="image">
+        </div>
+      </div>
         <div id="div" class="row center">
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
               <i class="material-icons right">send</i>
